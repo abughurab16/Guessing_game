@@ -1,14 +1,15 @@
 import os
+import rand
 
-const (
-	secret_number = 25
-	total_tries   = 3
-)
+const total_tries = 5
 
 fn main() {
 	mut input_num := 0
 	mut counter := 1
-	println('Hello, Guess a number from 0-50')
+	println("Hello, Let's guess some numbers!")
+	min := os.input('enter min: ').int()
+	max := os.input('enter max: ').int()
+	secret_number := rand.i64_in_range(min, max + 1)
 
 	// game loop
 	for input_num != secret_number && counter <= total_tries {
@@ -26,4 +27,5 @@ fn main() {
 		counter++
 	}
 	println('Game Over.')
+	exit(0) // cuze why not
 }
