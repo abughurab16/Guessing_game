@@ -14,14 +14,16 @@ fn main() {
 		input_num = os.input("enter a number: ").int()
 		if input_num < secret_number {
 			println("too low")
+			println("tries: $counter")
 		} else if input_num > secret_number {
 			println("too high")
+			println("tries: $counter")
 		} else {
 			println("Congratulations You Won!!")
+			println("took you: $counter tries")
 		}
-		println("tries: $counter")
 		counter++
 	}
-	println("You lost!")
+	println("Game Over.")
 	
 }
